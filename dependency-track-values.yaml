@@ -1,0 +1,11 @@
+apiserver:
+  image:
+    tag: 4.8.2
+frontend:
+  image:
+    tag: 4.8.1
+ingress: 
+  enabled: true
+  annotations: {}
+  ingressClassName: nginx
+  host: dependency-track.the-edge.xyz
