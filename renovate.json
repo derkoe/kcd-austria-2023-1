@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "ignorePresets": [":prHourlyLimit2"],
   "regexManagers": [
     {
       "fileMatch": ["(^|/)Dockerfile$"],
@@ -10,6 +9,16 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "NPM dependencies"
+    },
+    {
+      "matchDatasources": ["maven"],
+      "groupName": "Maven dependencies"
     }
   ]
 }
