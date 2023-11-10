@@ -37,7 +37,7 @@ resource "helm_release" "dtrack" {
 resource "helm_release" "sbom_operator" {
   repository = "https://ckotzbauer.github.io/helm-charts"
   chart      = "sbom-operator"
-  version    = "0.28.0"
+  version    = "0.30.0"
 
   name             = "sbom-operator"
   namespace        = "sbom-operator"
